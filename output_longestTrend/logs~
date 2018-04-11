@@ -1,0 +1,207 @@
+[cloudera@quickstart /]$ spark-submit --master local[*] --deploy-mode client --class com.cs267.youtube.util.LongestTrendDriver /home/cloudera/Desktop/youtube-new/Youtube.jar /user/cloudera/project/input/ /user/cloudera/project/output
+18/04/10 10:48:42 INFO spark.SparkContext: Running Spark version 1.6.0
+18/04/10 10:48:47 INFO spark.SecurityManager: Changing view acls to: cloudera
+18/04/10 10:48:47 INFO spark.SecurityManager: Changing modify acls to: cloudera
+18/04/10 10:48:47 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(cloudera); users with modify permissions: Set(cloudera)
+18/04/10 10:48:49 INFO util.Utils: Successfully started service 'sparkDriver' on port 50031.
+18/04/10 10:48:52 INFO slf4j.Slf4jLogger: Slf4jLogger started
+18/04/10 10:48:52 INFO Remoting: Starting remoting
+18/04/10 10:48:53 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@10.0.2.15:51147]
+18/04/10 10:48:53 INFO Remoting: Remoting now listens on addresses: [akka.tcp://sparkDriverActorSystem@10.0.2.15:51147]
+18/04/10 10:48:53 INFO util.Utils: Successfully started service 'sparkDriverActorSystem' on port 51147.
+18/04/10 10:48:53 INFO spark.SparkEnv: Registering MapOutputTracker
+18/04/10 10:48:54 INFO spark.SparkEnv: Registering BlockManagerMaster
+18/04/10 10:48:54 INFO storage.DiskBlockManager: Created local directory at /tmp/blockmgr-c120e4dd-670b-4c8e-b0af-13e10db2569d
+18/04/10 10:48:54 INFO storage.MemoryStore: MemoryStore started with capacity 530.3 MB
+18/04/10 10:48:54 INFO spark.SparkEnv: Registering OutputCommitCoordinator
+18/04/10 10:48:56 INFO util.Utils: Successfully started service 'SparkUI' on port 4040.
+18/04/10 10:48:56 INFO ui.SparkUI: Started SparkUI at http://10.0.2.15:4040
+18/04/10 10:48:57 INFO spark.SparkContext: Added JAR file:/home/cloudera/Desktop/youtube-new/Youtube.jar at spark://10.0.2.15:50031/jars/Youtube.jar with timestamp 1523382537033
+18/04/10 10:48:57 INFO executor.Executor: Starting executor ID driver on host localhost
+18/04/10 10:48:57 INFO util.Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 51950.
+18/04/10 10:48:57 INFO netty.NettyBlockTransferService: Server created on 51950
+18/04/10 10:48:57 INFO storage.BlockManager: external shuffle service port = 7337
+18/04/10 10:48:57 INFO storage.BlockManagerMaster: Trying to register BlockManager
+18/04/10 10:48:58 INFO storage.BlockManagerMasterEndpoint: Registering block manager localhost:51950 with 530.3 MB RAM, BlockManagerId(driver, localhost, 51950)
+18/04/10 10:48:58 INFO storage.BlockManagerMaster: Registered BlockManager
+18/04/10 10:49:05 INFO scheduler.EventLoggingListener: Logging events to hdfs://quickstart.cloudera:8020/user/spark/applicationHistory/local-1523382537470
+18/04/10 10:49:05 INFO spark.SparkContext: Registered listener com.cloudera.spark.lineage.ClouderaNavigatorListener
+18/04/10 10:49:10 INFO storage.MemoryStore: Block broadcast_0 stored as values in memory (estimated size 209.1 KB, free 530.1 MB)
+18/04/10 10:49:13 INFO storage.MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 25.3 KB, free 530.1 MB)
+18/04/10 10:49:13 INFO storage.BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:51950 (size: 25.3 KB, free: 530.3 MB)
+18/04/10 10:49:13 INFO spark.SparkContext: Created broadcast 0 from textFile at LongestTrendDriver.java:25
+18/04/10 10:49:15 INFO mapred.FileInputFormat: Total input paths to process : 5
+18/04/10 10:49:16 INFO spark.SparkContext: Starting job: first at LongestTrendDriver.java:26
+18/04/10 10:49:16 INFO scheduler.DAGScheduler: Got job 0 (first at LongestTrendDriver.java:26) with 1 output partitions
+18/04/10 10:49:16 INFO scheduler.DAGScheduler: Final stage: ResultStage 0 (first at LongestTrendDriver.java:26)
+18/04/10 10:49:16 INFO scheduler.DAGScheduler: Parents of final stage: List()
+18/04/10 10:49:16 INFO scheduler.DAGScheduler: Missing parents: List()
+18/04/10 10:49:16 INFO scheduler.DAGScheduler: Submitting ResultStage 0 (/user/cloudera/project/input/ MapPartitionsRDD[1] at textFile at LongestTrendDriver.java:25), which has no missing parents
+18/04/10 10:49:17 INFO storage.MemoryStore: Block broadcast_1 stored as values in memory (estimated size 3.1 KB, free 530.0 MB)
+18/04/10 10:49:17 INFO storage.MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 1849.0 B, free 530.0 MB)
+18/04/10 10:49:17 INFO storage.BlockManagerInfo: Added broadcast_1_piece0 in memory on localhost:51950 (size: 1849.0 B, free: 530.3 MB)
+18/04/10 10:49:17 INFO spark.SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1004
+18/04/10 10:49:17 INFO scheduler.DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (/user/cloudera/project/input/ MapPartitionsRDD[1] at textFile at LongestTrendDriver.java:25) (first 15 tasks are for partitions Vector(0))
+18/04/10 10:49:17 INFO scheduler.TaskSchedulerImpl: Adding task set 0.0 with 1 tasks
+18/04/10 10:49:18 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, executor driver, partition 0, ANY, 2228 bytes)
+18/04/10 10:49:18 INFO executor.Executor: Running task 0.0 in stage 0.0 (TID 0)
+18/04/10 10:49:18 INFO spark.ExecutorAllocationManager: New executor driver has registered (new total is 1)
+18/04/10 10:49:18 INFO executor.Executor: Fetching spark://10.0.2.15:50031/jars/Youtube.jar with timestamp 1523382537033
+18/04/10 10:49:19 INFO util.Utils: Fetching spark://10.0.2.15:50031/jars/Youtube.jar to /tmp/spark-dc656f66-4556-4c73-8baa-05614de62f02/userFiles-7186b501-c812-401e-b157-05db173953c9/fetchFileTemp928443372099419767.tmp
+18/04/10 10:49:19 INFO executor.Executor: Adding file:/tmp/spark-dc656f66-4556-4c73-8baa-05614de62f02/userFiles-7186b501-c812-401e-b157-05db173953c9/Youtube.jar to class loader
+18/04/10 10:49:19 INFO rdd.HadoopRDD: Input split: hdfs://quickstart.cloudera:8020/user/cloudera/project/input/CAvideos-csv.csv:0+43953781
+18/04/10 10:49:19 INFO Configuration.deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+18/04/10 10:49:19 INFO Configuration.deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+18/04/10 10:49:19 INFO Configuration.deprecation: mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+18/04/10 10:49:19 INFO Configuration.deprecation: mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+18/04/10 10:49:19 INFO Configuration.deprecation: mapred.job.id is deprecated. Instead, use mapreduce.job.id
+18/04/10 10:49:20 INFO executor.Executor: Finished task 0.0 in stage 0.0 (TID 0). 2217 bytes result sent to driver
+18/04/10 10:49:20 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 2274 ms on localhost (executor driver) (1/1)
+18/04/10 10:49:20 INFO scheduler.DAGScheduler: ResultStage 0 (first at LongestTrendDriver.java:26) finished in 2.625 s
+18/04/10 10:49:20 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+18/04/10 10:49:20 INFO scheduler.DAGScheduler: Job 0 finished: first at LongestTrendDriver.java:26, took 4.079379 s
+18/04/10 10:49:21 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 1
+18/04/10 10:49:21 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+18/04/10 10:49:21 INFO spark.SparkContext: Starting job: saveAsTextFile at LongestTrendDriver.java:37
+18/04/10 10:49:21 INFO scheduler.DAGScheduler: Registering RDD 4 (mapToPair at SparkMaxTrend.java:42)
+18/04/10 10:49:21 INFO scheduler.DAGScheduler: Got job 1 (saveAsTextFile at LongestTrendDriver.java:37) with 5 output partitions
+18/04/10 10:49:21 INFO scheduler.DAGScheduler: Final stage: ResultStage 2 (saveAsTextFile at LongestTrendDriver.java:37)
+18/04/10 10:49:21 INFO scheduler.DAGScheduler: Parents of final stage: List(ShuffleMapStage 1)
+18/04/10 10:49:21 INFO scheduler.DAGScheduler: Missing parents: List(ShuffleMapStage 1)
+18/04/10 10:49:21 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 1 (MapPartitionsRDD[4] at mapToPair at SparkMaxTrend.java:42), which has no missing parents
+18/04/10 10:49:21 INFO storage.MemoryStore: Block broadcast_2 stored as values in memory (estimated size 6.0 KB, free 530.0 MB)
+18/04/10 10:49:21 INFO storage.MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 3.1 KB, free 530.0 MB)
+18/04/10 10:49:21 INFO storage.BlockManagerInfo: Added broadcast_2_piece0 in memory on localhost:51950 (size: 3.1 KB, free: 530.3 MB)
+18/04/10 10:49:21 INFO spark.SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1004
+18/04/10 10:49:21 INFO scheduler.DAGScheduler: Submitting 5 missing tasks from ShuffleMapStage 1 (MapPartitionsRDD[4] at mapToPair at SparkMaxTrend.java:42) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4))
+18/04/10 10:49:21 INFO scheduler.TaskSchedulerImpl: Adding task set 1.0 with 5 tasks
+18/04/10 10:49:21 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1, localhost, executor driver, partition 0, ANY, 2217 bytes)
+18/04/10 10:49:21 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 1.0 (TID 2, localhost, executor driver, partition 1, ANY, 2217 bytes)
+18/04/10 10:49:21 INFO executor.Executor: Running task 0.0 in stage 1.0 (TID 1)
+18/04/10 10:49:22 INFO executor.Executor: Running task 1.0 in stage 1.0 (TID 2)
+18/04/10 10:49:22 INFO rdd.HadoopRDD: Input split: hdfs://quickstart.cloudera:8020/user/cloudera/project/input/CAvideos-csv.csv:0+43953781
+18/04/10 10:49:22 INFO rdd.HadoopRDD: Input split: hdfs://quickstart.cloudera:8020/user/cloudera/project/input/DEvideos-csv.csv:0+43594992
+18/04/10 10:49:23 WARN spark.SparkContext: Requesting executors is only supported in coarse-grained mode
+18/04/10 10:49:23 WARN spark.ExecutorAllocationManager: Unable to reach the cluster manager to request 2 total executors!
+18/04/10 10:49:23 WARN spark.SparkContext: Requesting executors is only supported in coarse-grained mode
+18/04/10 10:49:23 WARN spark.ExecutorAllocationManager: Unable to reach the cluster manager to request 3 total executors!
+18/04/10 10:49:24 WARN spark.SparkContext: Requesting executors is only supported in coarse-grained mode
+18/04/10 10:49:24 WARN spark.ExecutorAllocationManager: Unable to reach the cluster manager to request 4 total executors!
+18/04/10 10:49:25 WARN spark.SparkContext: Requesting executors is only supported in coarse-grained mode
+18/04/10 10:49:25 WARN spark.ExecutorAllocationManager: Unable to reach the cluster manager to request 5 total executors!
+18/04/10 10:49:40 INFO storage.BlockManagerInfo: Removed broadcast_1_piece0 on localhost:51950 in memory (size: 1849.0 B, free: 530.3 MB)
+18/04/10 10:49:40 INFO spark.ContextCleaner: Cleaned accumulator 1
+18/04/10 10:50:28 INFO executor.Executor: Finished task 1.0 in stage 1.0 (TID 2). 2240 bytes result sent to driver
+18/04/10 10:50:28 INFO scheduler.TaskSetManager: Starting task 2.0 in stage 1.0 (TID 3, localhost, executor driver, partition 2, ANY, 2217 bytes)
+18/04/10 10:50:28 INFO executor.Executor: Running task 2.0 in stage 1.0 (TID 3)
+18/04/10 10:50:28 INFO rdd.HadoopRDD: Input split: hdfs://quickstart.cloudera:8020/user/cloudera/project/input/FRvideos-csv.csv:0+34652058
+18/04/10 10:50:28 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 1.0 (TID 2) in 66484 ms on localhost (executor driver) (1/5)
+18/04/10 10:50:28 WARN spark.SparkContext: Requesting executors is only supported in coarse-grained mode
+18/04/10 10:50:34 INFO executor.Executor: Finished task 0.0 in stage 1.0 (TID 1). 2240 bytes result sent to driver
+18/04/10 10:50:34 INFO scheduler.TaskSetManager: Starting task 3.0 in stage 1.0 (TID 4, localhost, executor driver, partition 3, ANY, 2217 bytes)
+18/04/10 10:50:34 INFO executor.Executor: Running task 3.0 in stage 1.0 (TID 4)
+18/04/10 10:50:34 INFO rdd.HadoopRDD: Input split: hdfs://quickstart.cloudera:8020/user/cloudera/project/input/GBvideos-csv.csv:0+38970381
+18/04/10 10:50:34 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 72271 ms on localhost (executor driver) (2/5)
+18/04/10 10:50:34 WARN spark.SparkContext: Requesting executors is only supported in coarse-grained mode
+18/04/10 10:51:13 INFO executor.Executor: Finished task 2.0 in stage 1.0 (TID 3). 2240 bytes result sent to driver
+18/04/10 10:51:13 INFO scheduler.TaskSetManager: Starting task 4.0 in stage 1.0 (TID 5, localhost, executor driver, partition 4, ANY, 2217 bytes)
+18/04/10 10:51:13 INFO executor.Executor: Running task 4.0 in stage 1.0 (TID 5)
+18/04/10 10:51:13 INFO rdd.HadoopRDD: Input split: hdfs://quickstart.cloudera:8020/user/cloudera/project/input/USvideos-csv.csv:0+42174771
+18/04/10 10:51:13 INFO scheduler.TaskSetManager: Finished task 2.0 in stage 1.0 (TID 3) in 45250 ms on localhost (executor driver) (3/5)
+18/04/10 10:51:13 WARN spark.SparkContext: Requesting executors is only supported in coarse-grained mode
+18/04/10 10:51:22 INFO executor.Executor: Finished task 3.0 in stage 1.0 (TID 4). 2240 bytes result sent to driver
+18/04/10 10:51:22 INFO scheduler.TaskSetManager: Finished task 3.0 in stage 1.0 (TID 4) in 48098 ms on localhost (executor driver) (4/5)
+18/04/10 10:51:22 WARN spark.SparkContext: Requesting executors is only supported in coarse-grained mode
+18/04/10 10:51:43 INFO executor.Executor: Finished task 4.0 in stage 1.0 (TID 5). 2240 bytes result sent to driver
+18/04/10 10:51:43 INFO scheduler.TaskSetManager: Finished task 4.0 in stage 1.0 (TID 5) in 29861 ms on localhost (executor driver) (5/5)
+18/04/10 10:51:43 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+18/04/10 10:51:43 INFO scheduler.DAGScheduler: ShuffleMapStage 1 (mapToPair at SparkMaxTrend.java:42) finished in 141.312 s
+18/04/10 10:51:43 INFO scheduler.DAGScheduler: looking for newly runnable stages
+18/04/10 10:51:43 INFO scheduler.DAGScheduler: running: Set()
+18/04/10 10:51:43 INFO scheduler.DAGScheduler: waiting: Set(ResultStage 2)
+18/04/10 10:51:43 INFO scheduler.DAGScheduler: failed: Set()
+18/04/10 10:51:43 INFO scheduler.DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[8] at saveAsTextFile at LongestTrendDriver.java:37), which has no missing parents
+18/04/10 10:51:43 INFO storage.MemoryStore: Block broadcast_3 stored as values in memory (estimated size 82.4 KB, free 530.0 MB)
+18/04/10 10:51:43 INFO storage.MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 30.1 KB, free 529.9 MB)
+18/04/10 10:51:43 INFO storage.BlockManagerInfo: Added broadcast_3_piece0 in memory on localhost:51950 (size: 30.1 KB, free: 530.2 MB)
+18/04/10 10:51:43 INFO spark.SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1004
+18/04/10 10:51:43 INFO scheduler.DAGScheduler: Submitting 5 missing tasks from ResultStage 2 (MapPartitionsRDD[8] at saveAsTextFile at LongestTrendDriver.java:37) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4))
+18/04/10 10:51:43 INFO scheduler.TaskSchedulerImpl: Adding task set 2.0 with 5 tasks
+18/04/10 10:51:43 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 2.0 (TID 6, localhost, executor driver, partition 0, NODE_LOCAL, 1944 bytes)
+18/04/10 10:51:43 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 2.0 (TID 7, localhost, executor driver, partition 1, NODE_LOCAL, 1944 bytes)
+18/04/10 10:51:43 INFO executor.Executor: Running task 0.0 in stage 2.0 (TID 6)
+18/04/10 10:51:43 INFO executor.Executor: Running task 1.0 in stage 2.0 (TID 7)
+18/04/10 10:51:43 INFO storage.ShuffleBlockFetcherIterator: Getting 5 non-empty blocks out of 5 blocks
+18/04/10 10:51:43 INFO storage.ShuffleBlockFetcherIterator: Getting 5 non-empty blocks out of 5 blocks
+18/04/10 10:51:43 INFO storage.ShuffleBlockFetcherIterator: Started 0 remote fetches in 27 ms
+18/04/10 10:51:43 INFO storage.ShuffleBlockFetcherIterator: Started 0 remote fetches in 31 ms
+18/04/10 10:51:44 WARN spark.SparkContext: Requesting executors is only supported in coarse-grained mode
+18/04/10 10:51:44 WARN spark.ExecutorAllocationManager: Unable to reach the cluster manager to request 2 total executors!
+18/04/10 10:51:45 WARN spark.SparkContext: Requesting executors is only supported in coarse-grained mode
+18/04/10 10:51:45 WARN spark.ExecutorAllocationManager: Unable to reach the cluster manager to request 3 total executors!
+18/04/10 10:51:46 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 1
+18/04/10 10:51:46 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+18/04/10 10:51:46 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 1
+18/04/10 10:51:46 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+18/04/10 10:51:46 WARN spark.SparkContext: Requesting executors is only supported in coarse-grained mode
+18/04/10 10:51:46 WARN spark.ExecutorAllocationManager: Unable to reach the cluster manager to request 4 total executors!
+18/04/10 10:51:47 WARN spark.SparkContext: Requesting executors is only supported in coarse-grained mode
+18/04/10 10:51:47 WARN spark.ExecutorAllocationManager: Unable to reach the cluster manager to request 5 total executors!
+18/04/10 10:51:50 INFO output.FileOutputCommitter: Saved output of task 'attempt_201804101049_0002_m_000000_6' to hdfs://quickstart.cloudera:8020/user/cloudera/project/output_longestTrend/_temporary/0/task_201804101049_0002_m_000000
+18/04/10 10:51:50 INFO mapred.SparkHadoopMapRedUtil: attempt_201804101049_0002_m_000000_6: Committed
+18/04/10 10:51:50 INFO output.FileOutputCommitter: Saved output of task 'attempt_201804101049_0002_m_000001_7' to hdfs://quickstart.cloudera:8020/user/cloudera/project/output_longestTrend/_temporary/0/task_201804101049_0002_m_000001
+18/04/10 10:51:50 INFO mapred.SparkHadoopMapRedUtil: attempt_201804101049_0002_m_000001_7: Committed
+18/04/10 10:51:50 INFO executor.Executor: Finished task 0.0 in stage 2.0 (TID 6). 2038 bytes result sent to driver
+18/04/10 10:51:50 INFO executor.Executor: Finished task 1.0 in stage 2.0 (TID 7). 2038 bytes result sent to driver
+18/04/10 10:51:50 INFO scheduler.TaskSetManager: Starting task 2.0 in stage 2.0 (TID 8, localhost, executor driver, partition 2, NODE_LOCAL, 1944 bytes)
+18/04/10 10:51:50 INFO executor.Executor: Running task 2.0 in stage 2.0 (TID 8)
+18/04/10 10:51:50 INFO scheduler.TaskSetManager: Starting task 3.0 in stage 2.0 (TID 9, localhost, executor driver, partition 3, NODE_LOCAL, 1944 bytes)
+18/04/10 10:51:50 INFO executor.Executor: Running task 3.0 in stage 2.0 (TID 9)
+18/04/10 10:51:50 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 2.0 (TID 6) in 7024 ms on localhost (executor driver) (1/5)
+18/04/10 10:51:50 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 2.0 (TID 7) in 7026 ms on localhost (executor driver) (2/5)
+18/04/10 10:51:50 WARN spark.SparkContext: Requesting executors is only supported in coarse-grained mode
+18/04/10 10:51:50 INFO storage.ShuffleBlockFetcherIterator: Getting 5 non-empty blocks out of 5 blocks
+18/04/10 10:51:50 INFO storage.ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+18/04/10 10:51:50 INFO storage.ShuffleBlockFetcherIterator: Getting 5 non-empty blocks out of 5 blocks
+18/04/10 10:51:50 INFO storage.ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+18/04/10 10:51:51 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 1
+18/04/10 10:51:51 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+18/04/10 10:51:51 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 1
+18/04/10 10:51:51 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+18/04/10 10:51:52 INFO output.FileOutputCommitter: Saved output of task 'attempt_201804101049_0002_m_000003_9' to hdfs://quickstart.cloudera:8020/user/cloudera/project/output_longestTrend/_temporary/0/task_201804101049_0002_m_000003
+18/04/10 10:51:52 INFO mapred.SparkHadoopMapRedUtil: attempt_201804101049_0002_m_000003_9: Committed
+18/04/10 10:51:52 INFO executor.Executor: Finished task 3.0 in stage 2.0 (TID 9). 2052 bytes result sent to driver
+18/04/10 10:51:52 INFO scheduler.TaskSetManager: Starting task 4.0 in stage 2.0 (TID 10, localhost, executor driver, partition 4, NODE_LOCAL, 1944 bytes)
+18/04/10 10:51:52 INFO executor.Executor: Running task 4.0 in stage 2.0 (TID 10)
+18/04/10 10:51:52 INFO output.FileOutputCommitter: Saved output of task 'attempt_201804101049_0002_m_000002_8' to hdfs://quickstart.cloudera:8020/user/cloudera/project/output_longestTrend/_temporary/0/task_201804101049_0002_m_000002
+18/04/10 10:51:52 INFO mapred.SparkHadoopMapRedUtil: attempt_201804101049_0002_m_000002_8: Committed
+18/04/10 10:51:52 INFO executor.Executor: Finished task 2.0 in stage 2.0 (TID 8). 2052 bytes result sent to driver
+18/04/10 10:51:52 INFO scheduler.TaskSetManager: Finished task 3.0 in stage 2.0 (TID 9) in 1689 ms on localhost (executor driver) (3/5)
+18/04/10 10:51:52 WARN spark.SparkContext: Requesting executors is only supported in coarse-grained mode
+18/04/10 10:51:52 INFO scheduler.TaskSetManager: Finished task 2.0 in stage 2.0 (TID 8) in 1777 ms on localhost (executor driver) (4/5)
+18/04/10 10:51:52 WARN spark.SparkContext: Requesting executors is only supported in coarse-grained mode
+18/04/10 10:51:52 INFO storage.ShuffleBlockFetcherIterator: Getting 5 non-empty blocks out of 5 blocks
+18/04/10 10:51:52 INFO storage.ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+18/04/10 10:51:52 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 1
+18/04/10 10:51:52 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+18/04/10 10:51:52 INFO output.FileOutputCommitter: Saved output of task 'attempt_201804101049_0002_m_000004_10' to hdfs://quickstart.cloudera:8020/user/cloudera/project/output_longestTrend/_temporary/0/task_201804101049_0002_m_000004
+18/04/10 10:51:52 INFO mapred.SparkHadoopMapRedUtil: attempt_201804101049_0002_m_000004_10: Committed
+18/04/10 10:51:52 INFO executor.Executor: Finished task 4.0 in stage 2.0 (TID 10). 2052 bytes result sent to driver
+18/04/10 10:51:52 INFO scheduler.DAGScheduler: ResultStage 2 (saveAsTextFile at LongestTrendDriver.java:37) finished in 9.154 s
+18/04/10 10:51:52 INFO scheduler.DAGScheduler: Job 1 finished: saveAsTextFile at LongestTrendDriver.java:37, took 151.061557 s
+18/04/10 10:51:52 INFO scheduler.TaskSetManager: Finished task 4.0 in stage 2.0 (TID 10) in 597 ms on localhost (executor driver) (5/5)
+18/04/10 10:51:52 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+18/04/10 10:51:52 WARN spark.SparkContext: Requesting executors is only supported in coarse-grained mode
+18/04/10 10:51:52 INFO ui.SparkUI: Stopped Spark web UI at http://10.0.2.15:4040
+18/04/10 10:51:52 INFO spark.MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+18/04/10 10:51:53 INFO storage.MemoryStore: MemoryStore cleared
+18/04/10 10:51:53 INFO storage.BlockManager: BlockManager stopped
+18/04/10 10:51:53 INFO storage.BlockManagerMaster: BlockManagerMaster stopped
+18/04/10 10:51:53 INFO scheduler.OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+18/04/10 10:51:53 INFO spark.SparkContext: Successfully stopped SparkContext
+18/04/10 10:51:53 INFO util.ShutdownHookManager: Shutdown hook called
+18/04/10 10:51:53 INFO remote.RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+18/04/10 10:51:53 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-dc656f66-4556-4c73-8baa-05614de62f02
+18/04/10 10:51:53 INFO remote.RemoteActorRefProvider$RemotingTerminator: Remote daemon shut down; proceeding with flushing remote transports.
+[cloudera@quickstart /]$ 
+[cloudera@quickstart /]$ hadoop fs -get /user/cloudera/project/output_l* /home/cloudera/Desktop/youtube-new/
