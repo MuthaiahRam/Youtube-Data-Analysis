@@ -1,0 +1,38 @@
+Video-id | Trending_date| title| Channel Title| Category id| publish time| tags| views |likes |dislikes|comment_count|thumbnail_link|comments_disables|ratings_disabled|video_error_removed|description
+
+===================================================================================================================
+1.Sentiment analysis on description field 
+2.Count url shortners [+2] - Completed
+3.Top K trending videos (http://mathforum.org/library/drmath/view/72033.html) [+8]
+[views,likes,dislikes,comment count,no of occurrences] Assign weights and find top k.
+4.Top channels which had most trending videos [+5] (go by the # of occurrences) - Completed
+5.Title wordcloud [+1] - Completed
+6.Top Category ID/Category Title
+7.How much time passes between published and trending? [+7]
+8.Likes vs Views - Scatter plot [+3] - Completed
+9.Top Countries in Absolute numbers
+10.TOP VIEWS VIDEOS WALL [+4] - N/A (use only open refine)
+11.How long usually a video can trend in different countries? [+6] - Completed
+12.Users like videos from which CATEGORY the most? 
+13.Most videos category wise (Plot category vs count of video)
+14.To see the correlation between the likes, dislikes, comments_count, and views lets plot a correlation matrix [+9]
+15.Positive and negative - Sentiment analysis (if we get data)
+16.Find similar videos so as to recommend [+10]
+===================================================================================================================
+Completed Analysis:
+1,2,3,4(NA),5,6
+
+Visualization:
+1
+
+
+=================================================================================================================
+How much time passes between published and trending? [+7]
+Top K trending videos (http://mathforum.org/library/drmath/view/72033.html) [+8] (likes, comments, review counts, views)
+To see the correlation between the likes, dislikes, comments_count, and views lets plot a correlation matrix [+9]
+Find similar videos so as to recommend [+10]
+=================================================================================================================
+
+
+
+
